@@ -1,0 +1,8 @@
+{
+    "schemaID":"8y8oycXjnQCRT2t3mRuzbP:2:GXFS-Workshop-Credential:1.0.0",
+    "name":"GXFS-Workshop-Credential",
+    "isRevokable":false,
+    "isAutoIssue":true,
+    "expiryHours":"4000",
+    "createdBy":"Author"
+}

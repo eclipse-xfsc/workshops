@@ -1,0 +1,12 @@
+{
+    "name": "GXFS-Workshop-Credential",
+    "createdBy": "Author",
+    "version": "1.0.0",
+    "attributes": [
+      "userName",
+      "email",
+      "birthdate",
+      "cardNumber",
+      "identifier"
+    ]
+  }
