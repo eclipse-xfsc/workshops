@@ -1,0 +1,84 @@
+{
+    "tenant_Id": "tenant_space",
+    "request_Id": "a2348",
+    "issuer": {
+      "credential_issuer": "http://host.docker.internal:8084/v1/tenants/tenant_space",
+      "authorization_servers": [
+        "http://host.docker.internal:4444",
+        "http://host.docker.internal:8083"
+      ],
+      "credential_endpoint": "http://host.docker.internal:8082/v1/tenants/tenant_space/credential",
+      "credential_response_encryption": {
+        "encryption_required": false
+      },
+      "display": [
+        { "name": "Example Issuer", "locale": "en-US" },
+        { "name": "Beispiel Issuer", "locale": "de-DE" }
+      ],
+      "credential_identifiers_supported": true,
+      "credential_configurations_supported": {
+        "WorkshopCredential": {
+          "format": "vc+sd-jwt",
+          "cryptographic_binding_methods_supported": ["did:jwk"],
+          "credential_signing_alg_values_supported": ["ES256"],
+          "credentialDefinition": {
+            "context": [
+              "https://www.w3.org/2018/credentials/v1",
+              "https://www.w3.org/2018/credentials/examples/v1"
+            ],
+            "type": ["VerifiableCredential", "UniversityDegreeCredential"],
+            "credentialSubject": {
+              "given_name": {
+                "display": [{ "name": "Given Name", "locale": "en-US" }]
+              },
+              "family_name": {
+                "display": [{ "name": "Surname", "locale": "en-US" }]
+              }
+            }
+          },
+          "proof_types_supported": {
+            "ldp_vc": {
+              "proof_signing_alg_values_supported": ["ES256"]
+            }
+          },
+          "display": [
+            {
+              "name": "Workshop Credential",
+              "locale": "en-US",
+              "logo": {
+                "url": "https://www.eclipse.org/eclipse.org-common/themes/solstice/public/images/logo/eclipse-foundation-grey-orange.svg",
+                "alternative_text": "Eclipse Foundation Logo"
+              },
+              "background_color": "#FFFFFF",
+              "text_color": "#000000"
+            }
+          ],
+          "vct": "workshopcredential",
+          "schema": {
+            "data": {
+              "$schema": "https://json-schema.org/draft/2020-12/schema",
+              "$id": "https://example.com/workshopcredential.schema.json",
+              "title": "Workshop Credential",
+              "description": "A product from Acme's catalog",
+              "type": "object",
+              "properties": {
+                "given_name": {
+                  "description": "The unique identifier for a product",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "Email Adress",
+                  "type": "string"
+                }
+              }
+            },
+            "ui": {
+              "ui:order": ["given_name", "email"]
+            }
+          },
+          "topic": "issuer.WorkshopCredential"
+        }
+      }
+    }
+  }
+  

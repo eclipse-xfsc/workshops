@@ -1,0 +1,1173 @@
+[
+    {
+        "id": "d1267c559558b24d",
+        "type": "tab",
+        "label": "Back-End",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "998c0ed5096cfa9d",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "0cd0437eb252fb09",
+            "c91e675fd1f8d9f6",
+            "af233d7d1d1e783b",
+            "b075c5ff939fcec8",
+            "b385209b548cd818"
+        ],
+        "x": 224,
+        "y": 84,
+        "w": 1152,
+        "h": 252
+    },
+    {
+        "id": "cb367543108969e3",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "c47da62f07b73408",
+            "016dc54992678c27",
+            "64bf2362c55861a7",
+            "0ae3344623663691",
+            "2a5e52c9c11b0307",
+            "5f93b2cef0087d88"
+        ],
+        "x": 323,
+        "y": 478,
+        "w": 1589,
+        "h": 1244
+    },
+    {
+        "id": "781be1e8512fcaa5",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "d2569de64cd0d357",
+            "0f196625c1c13daa"
+        ],
+        "x": 318,
+        "y": 1818,
+        "w": 1754,
+        "h": 484
+    },
+    {
+        "id": "c47da62f07b73408",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "cb367543108969e3",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "47326a0e661d9754",
+            "71abf7cc928e6d43",
+            "dc29e333f4637682",
+            "5e22ef7f94ae959c"
+        ],
+        "x": 354,
+        "y": 504,
+        "w": 892,
+        "h": 209.5
+    },
+    {
+        "id": "016dc54992678c27",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "cb367543108969e3",
+        "name": "",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "a62d303361e712b8",
+            "e6135cd1cb4560d6",
+            "612ea01f0336ce20",
+            "72e95e29076b8983",
+            "44001c6b5615ddc7",
+            "9733ae3b41efdfc3"
+        ],
+        "x": 359,
+        "y": 764,
+        "w": 1287,
+        "h": 229.5
+    },
+    {
+        "id": "64bf2362c55861a7",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "cb367543108969e3",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "177e12a3b0665d27",
+            "414525d2f8507542",
+            "8abe067df9a42ed0",
+            "81c5b1f9fc845b35",
+            "4ff7325abadc6f87",
+            "30fd2ae08b00350d",
+            "7a6db9840c3fdb65"
+        ],
+        "x": 354,
+        "y": 1044,
+        "w": 1532,
+        "h": 229.5
+    },
+    {
+        "id": "0ae3344623663691",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "cb367543108969e3",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "8590ce595a24702c",
+            "8c1728bc3c55fc92",
+            "4a17cfc9f2aa07f4"
+        ],
+        "x": 349,
+        "y": 1544,
+        "w": 667,
+        "h": 152
+    },
+    {
+        "id": "2a5e52c9c11b0307",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "cb367543108969e3",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "81d236657179ea0f",
+            "26aa8bb8e3eabbd4",
+            "3edf6025b24a081c",
+            "d796500266870117",
+            "4a02fc954638c631"
+        ],
+        "x": 349,
+        "y": 1324,
+        "w": 1257,
+        "h": 172
+    },
+    {
+        "id": "d2569de64cd0d357",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "781be1e8512fcaa5",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "5298789686e294f7",
+            "fba5d03bdb2d4d30",
+            "04576dcb8e9ba86e",
+            "e7f5ec2d0f9e8e8d",
+            "973fbc63cbf90a7f"
+        ],
+        "x": 344,
+        "y": 2124,
+        "w": 1352,
+        "h": 152
+    },
+    {
+        "id": "0f196625c1c13daa",
+        "type": "group",
+        "z": "d1267c559558b24d",
+        "g": "781be1e8512fcaa5",
+        "style": {
+            "stroke": "#999999",
+            "stroke-opacity": "1",
+            "fill": "none",
+            "fill-opacity": "1",
+            "label": true,
+            "label-position": "nw",
+            "color": "#a4a4a4"
+        },
+        "nodes": [
+            "db6a8ab7597e42a6",
+            "fd84f51fef1b067c",
+            "bc98981caa8cff12",
+            "ec5b4c25343f0c45",
+            "3ba1b9d2de511235",
+            "54f86ed72583160f",
+            "ac24075f73e6b79a"
+        ],
+        "x": 344,
+        "y": 1844,
+        "w": 1702,
+        "h": 229.5
+    },
+    {
+        "id": "0cd0437eb252fb09",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "998c0ed5096cfa9d",
+        "name": "Process Fetch SO",
+        "func": "\nconst credentialSubjectId = msg.payload.content && msg.payload.content[0] && msg.payload.content[0].credentialSubjectId;\nif (credentialSubjectId) {\n    flow.set('credentialSubjectId', credentialSubjectId);\n    return msg;\n} else {\n    node.error('No credentialSubjectId found');\n}\n\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1225,
+        "y": 160,
+        "wires": [
+            [
+                "832ea2b49511b2bd",
+                "b385209b548cd818"
+            ]
+        ]
+    },
+    {
+        "id": "c91e675fd1f8d9f6",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "998c0ed5096cfa9d",
+        "name": "Prepare Fetch SO Payload",
+        "func": "const SERVICE_NAME = \"Apple M3 AIR-bc78fe7d-21c8-4038-a7c0-9219cf4be1d5\";\n// msg.uijson= msg.payload\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json, text/plain, */*\",\n    \"Origin\": \"https://catalogue.dev.smart-x.smartsenselabs.com\"\n};\nmsg.payload = {\n    page: 0,\n    size: 10,\n    query: {\n        or: [\n            {\n                value: [SERVICE_NAME],\n                node: \"ServiceOffering\",\n                key: \"name\",\n                operator: \"contain\"\n            }\n        ]\n    },\n    sort: [{ column: \"createdAt\", sortType: \"DESC\" }]\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 160,
+        "wires": [
+            [
+                "af233d7d1d1e783b"
+            ]
+        ]
+    },
+    {
+        "id": "af233d7d1d1e783b",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "998c0ed5096cfa9d",
+        "name": "Fetch SO",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://catalogue-api.dev.smart-x.smartsenselabs.com/gaiax/catalogue/search",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 935,
+        "y": 160,
+        "wires": [
+            [
+                "0cd0437eb252fb09"
+            ]
+        ]
+    },
+    {
+        "id": "db6a8ab7597e42a6",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "Set Credentials",
+        "func": "flow.set('credential', msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 495,
+        "y": 1960,
+        "wires": [
+            [
+                "fd84f51fef1b067c"
+            ]
+        ]
+    },
+    {
+        "id": "47326a0e661d9754",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "c47da62f07b73408",
+        "name": "Prepare Get SO Credential",
+        "func": "const credentialSubjectId = flow.get('credentialSubjectId');\nmsg.url = credentialSubjectId;\nmsg.uijson = msg.payload\nmsg.headers = {\n    \"Accept\": \"application/json\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 510,
+        "y": 620,
+        "wires": [
+            [
+                "71abf7cc928e6d43"
+            ]
+        ]
+    },
+    {
+        "id": "71abf7cc928e6d43",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "c47da62f07b73408",
+        "name": "Get SO Credential",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 785,
+        "y": 620,
+        "wires": [
+            [
+                "dc29e333f4637682",
+                "5e22ef7f94ae959c"
+            ]
+        ]
+    },
+    {
+        "id": "a62d303361e712b8",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "016dc54992678c27",
+        "name": "Process SO Credential",
+        "func": "const credentialSubjectId = flow.get('credentialSubjectId');\nconst data = msg.payload;\nconst SO = data.selfDescriptionCredential.verifiableCredential.find(\n    (cred) => cred.id === credentialSubjectId\n);\nif (SO && SO.credentialSubject && SO.credentialSubject['gx:accessCredential']) {\n    flow.set('accessCredentialUrl', SO.credentialSubject['gx:accessCredential']);\n    return msg;\n} else {\n    node.error('No accessCredentialUrl found');\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 595,
+        "y": 880,
+        "wires": [
+            [
+                "e6135cd1cb4560d6"
+            ]
+        ]
+    },
+    {
+        "id": "e6135cd1cb4560d6",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "016dc54992678c27",
+        "name": "Prepare Get Credential Offer",
+        "func": "const accessCredentialUrl = flow.get('accessCredentialUrl');\nmsg.url = accessCredentialUrl;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 880,
+        "wires": [
+            [
+                "612ea01f0336ce20"
+            ]
+        ]
+    },
+    {
+        "id": "612ea01f0336ce20",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "016dc54992678c27",
+        "name": "Get Credential Offer",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1195,
+        "y": 880,
+        "wires": [
+            [
+                "72e95e29076b8983",
+                "44001c6b5615ddc7"
+            ]
+        ]
+    },
+    {
+        "id": "177e12a3b0665d27",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "name": "Process Credential Offer",
+        "func": "const credentialOffer = msg.payload.credential_offer;\nif (credentialOffer) {\n    flow.set('credentialOffer', credentialOffer);\n    return msg;\n} else {\n    node.error('No credential_offer found');\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 590,
+        "y": 1160,
+        "wires": [
+            [
+                "81c5b1f9fc845b35"
+            ]
+        ]
+    },
+    {
+        "id": "414525d2f8507542",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "name": "Prepare Retrieve Offer",
+        "func": "\nconst storageId = msg.uuid;\nflow.set('storageId', storageId);\nconst credentialOffer = flow.get('credentialOffer');\n//msg.url = `https://cloud-wallet.xfsc.learn.smartsenselabs.com/api/offering/retrieve/${storageId}`;\nmsg.url = `https://cloud-wallet.xfsc.arlabdevelopments.com/api/offering/retrieve/${storageId}`;\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\nmsg.payload = {\n    credential_offer: credentialOffer\n};\ndelete msg.responseUrl\ndelete msg.retry\ndelete msg.statusCode\ndelete msg.redirectList\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [
+            {
+                "var": "uuid",
+                "module": "uuid"
+            }
+        ],
+        "x": 1165,
+        "y": 1160,
+        "wires": [
+            [
+                "8abe067df9a42ed0"
+            ]
+        ]
+    },
+    {
+        "id": "8abe067df9a42ed0",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "name": "Retrieve Offer",
+        "method": "PUT",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1445,
+        "y": 1160,
+        "wires": [
+            [
+                "4ff7325abadc6f87",
+                "7a6db9840c3fdb65"
+            ]
+        ]
+    },
+    {
+        "id": "81d236657179ea0f",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "2a5e52c9c11b0307",
+        "name": "Process Retrieve Offer",
+        "func": "const requestId = msg.payload;\nif (requestId) {\n    flow.set('requestId', requestId);\n    return msg;\n} else {\n    node.error('No requestId received');\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 595,
+        "y": 1420,
+        "wires": [
+            [
+                "26aa8bb8e3eabbd4"
+            ]
+        ]
+    },
+    {
+        "id": "26aa8bb8e3eabbd4",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "2a5e52c9c11b0307",
+        "name": "Prepare Generate SD-JWT",
+        "func": "const storageId = flow.get('storageId');\nconst requestId = flow.get('requestId');\nconst signerKey = \"signerkey\";\nconst tenantSpace = \"tenant_space\";\n//msg.url = `https://cloud-wallet.xfsc.learn.smartsenselabs.com/api/offering/clear/${storageId}/${requestId}`;\nmsg.url = `https://cloud-wallet.xfsc.arlabdevelopments.com/api/offering/clear/${storageId}/${requestId}`;\n\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\nmsg.payload = {\n    accept: true,\n    holderKey: signerKey,\n    holderNamespace: tenantSpace,\n    holderGroup: \"\"\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1420,
+        "wires": [
+            [
+                "3edf6025b24a081c"
+            ]
+        ]
+    },
+    {
+        "id": "3edf6025b24a081c",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "2a5e52c9c11b0307",
+        "name": "Generate SD-JWT",
+        "method": "DELETE",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1165,
+        "y": 1420,
+        "wires": [
+            [
+                "d796500266870117",
+                "255579a77803ae0c",
+                "5f93b2cef0087d88"
+            ]
+        ]
+    },
+    {
+        "id": "81c5b1f9fc845b35",
+        "type": "uuid",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "uuidVersion": "v4",
+        "namespaceType": "",
+        "namespace": "",
+        "namespaceCustom": "",
+        "name": "",
+        "field": "uuid",
+        "fieldType": "msg",
+        "x": 875,
+        "y": 1160,
+        "wires": [
+            [
+                "414525d2f8507542"
+            ]
+        ]
+    },
+    {
+        "id": "4ff7325abadc6f87",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "name": "Retrieve Offer",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1740,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "fd84f51fef1b067c",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "Process SD-JWT",
+        "func": "const credential = msg.payload.credential;\nif (credential) {\n    flow.set('sdjwtCredential', credential);\n    return msg;\n} else {\n    node.error('No SD-JWT credential received');\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 775,
+        "y": 1960,
+        "wires": [
+            [
+                "54f86ed72583160f"
+            ]
+        ]
+    },
+    {
+        "id": "bc98981caa8cff12",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "Prepare Verify SD-JWT",
+        "func": "const sdjwt = flow.get('sdjwtCredential');\nmsg.url = \"https://cloud-wallet.xfsc.learn.smartsenselabs.com/sd-jwt/verify\";\nmsg.headers = {\n    \"Content-Type\": \"application/json\"\n};\nmsg.payload = {\n    sdjwt: sdjwt,\n    nonce: null,\n    aud: null\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1335,
+        "y": 1960,
+        "wires": [
+            [
+                "ec5b4c25343f0c45"
+            ]
+        ]
+    },
+    {
+        "id": "ec5b4c25343f0c45",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "Verify SD-JWT",
+        "method": "POST",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1615,
+        "y": 1960,
+        "wires": [
+            [
+                "3ba1b9d2de511235",
+                "ac24075f73e6b79a"
+            ]
+        ]
+    },
+    {
+        "id": "5298789686e294f7",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "d2569de64cd0d357",
+        "name": "Process Verify SD-JWT",
+        "func": "const result = msg.payload.result;\nconst payloadStringified = JSON.stringify(msg.payload, null, 4); // Pretty print JSON with 4 spaces\nmsg.result = payloadStringified; // Attach the formatted string to msg\nif (result) {\n    node.log(`Verification result: ${result}`);\n    return msg;\n} else {\n    node.error('Verification failed');\n}\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 595,
+        "y": 2200,
+        "wires": [
+            [
+                "fba5d03bdb2d4d30"
+            ]
+        ]
+    },
+    {
+        "id": "fba5d03bdb2d4d30",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "d2569de64cd0d357",
+        "name": "Prepare Access Secured Endpoint",
+        "func": "const sdjwtCredential = flow.get('sdjwtCredential');\nmsg.url =\"https://cloud-wallet.xfsc.learn.smartsenselabs.com/workshop/hello-world\"\nmsg.headers = {\n    \"Authorization\": `Bearer ${sdjwtCredential}`\n};\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 2200,
+        "wires": [
+            [
+                "04576dcb8e9ba86e"
+            ]
+        ]
+    },
+    {
+        "id": "04576dcb8e9ba86e",
+        "type": "http request",
+        "z": "d1267c559558b24d",
+        "g": "d2569de64cd0d357",
+        "name": "Access Secured Endpoint Hello World!",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1260,
+        "y": 2200,
+        "wires": [
+            [
+                "e7f5ec2d0f9e8e8d"
+            ]
+        ]
+    },
+    {
+        "id": "3ba1b9d2de511235",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "Verify JWT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1910,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "54f86ed72583160f",
+        "type": "delay",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "200",
+        "timeoutUnits": "milliseconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1055,
+        "y": 1960,
+        "wires": [
+            [
+                "bc98981caa8cff12"
+            ]
+        ]
+    },
+    {
+        "id": "b075c5ff939fcec8",
+        "type": "inject",
+        "z": "d1267c559558b24d",
+        "g": "998c0ed5096cfa9d",
+        "name": "Start",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 360,
+        "y": 160,
+        "wires": [
+            [
+                "c91e675fd1f8d9f6"
+            ]
+        ]
+    },
+    {
+        "id": "8590ce595a24702c",
+        "type": "function",
+        "z": "d1267c559558b24d",
+        "g": "0ae3344623663691",
+        "name": "Decode Backend",
+        "func": "const decodeModule = global.get('decodeJwt'); // کل ماژول را دریافت می‌کنیم\nconst decodeJwt = decodeModule.decodeJwt; // دسترسی به تابع decodeJwt\n\n// بررسی وجود msg.payload و credential\nif (!msg.payload || !msg.payload.credential) {\n    node.error('Error: msg.payload.credential is undefined or null.', msg);\n    return null; // توقف اجرا\n}\n\n// دریافت مقدار credential\nconst sdJwt = msg.payload.credential;\n\n(async () => {\n    try {\n        const result = await decodeJwt(sdJwt); // دیکد کردن credential\n        msg.payload = result; // نتیجه دیکود شده را در payload قرار دهید\n        node.send(msg); // پیام را به خروجی ارسال کنید\n    } catch (error) {\n        node.error('Error decoding SD-JWT: ' + error.message, msg); // گزارش خطا\n    }\n})();\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 615,
+        "y": 1620,
+        "wires": [
+            [
+                "8c1728bc3c55fc92"
+            ]
+        ]
+    },
+    {
+        "id": "d796500266870117",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "2a5e52c9c11b0307",
+        "name": "Generate SD-JWT",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1450,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "e7f5ec2d0f9e8e8d",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "d2569de64cd0d357",
+        "name": "Hello World!",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1560,
+        "y": 2200,
+        "wires": []
+    },
+    {
+        "id": "8c1728bc3c55fc92",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "0ae3344623663691",
+        "name": "Decode Backend",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 870,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "024f74c676a13702",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "name": "link in 25",
+        "links": [
+            "832ea2b49511b2bd"
+        ],
+        "x": 247.5,
+        "y": 620,
+        "wires": [
+            [
+                "47326a0e661d9754"
+            ]
+        ]
+    },
+    {
+        "id": "832ea2b49511b2bd",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "name": "link out 26",
+        "mode": "link",
+        "links": [
+            "024f74c676a13702"
+        ],
+        "x": 1587.5,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "d531afd6f6fd89c0",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "name": "link in 26",
+        "links": [
+            "40619af2f3dc3bea",
+            "255579a77803ae0c"
+        ],
+        "x": 187.5,
+        "y": 1960,
+        "wires": [
+            [
+                "db6a8ab7597e42a6"
+            ]
+        ]
+    },
+    {
+        "id": "b385209b548cd818",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "998c0ed5096cfa9d",
+        "name": "Process Fetch SO",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1220,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "dc29e333f4637682",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "c47da62f07b73408",
+        "name": "Get SO Credential",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "72e95e29076b8983",
+        "type": "debug",
+        "z": "d1267c559558b24d",
+        "g": "016dc54992678c27",
+        "name": "Get Credential Offer",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1480,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "30fd2ae08b00350d",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "name": "link in 27",
+        "links": [
+            "44001c6b5615ddc7"
+        ],
+        "x": 407.5,
+        "y": 1160,
+        "wires": [
+            [
+                "177e12a3b0665d27"
+            ]
+        ]
+    },
+    {
+        "id": "44001c6b5615ddc7",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "g": "016dc54992678c27",
+        "name": "link out 28",
+        "mode": "link",
+        "links": [
+            "30fd2ae08b00350d"
+        ],
+        "x": 1392.5,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "5e22ef7f94ae959c",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "g": "c47da62f07b73408",
+        "name": "link out 29",
+        "mode": "link",
+        "links": [
+            "9733ae3b41efdfc3"
+        ],
+        "x": 1007.5,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "9733ae3b41efdfc3",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "g": "016dc54992678c27",
+        "name": "link in 28",
+        "links": [
+            "5e22ef7f94ae959c"
+        ],
+        "x": 412.5,
+        "y": 880,
+        "wires": [
+            [
+                "a62d303361e712b8"
+            ]
+        ]
+    },
+    {
+        "id": "4a02fc954638c631",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "g": "2a5e52c9c11b0307",
+        "name": "link in 29",
+        "links": [
+            "7a6db9840c3fdb65"
+        ],
+        "x": 402.5,
+        "y": 1420,
+        "wires": [
+            [
+                "81d236657179ea0f"
+            ]
+        ]
+    },
+    {
+        "id": "7a6db9840c3fdb65",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "g": "64bf2362c55861a7",
+        "name": "link out 30",
+        "mode": "link",
+        "links": [
+            "4a02fc954638c631"
+        ],
+        "x": 1667.5,
+        "y": 1220,
+        "wires": []
+    },
+    {
+        "id": "4a17cfc9f2aa07f4",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "g": "0ae3344623663691",
+        "name": "link in 30",
+        "links": [
+            "5f93b2cef0087d88"
+        ],
+        "x": 402.5,
+        "y": 1620,
+        "wires": [
+            [
+                "8590ce595a24702c"
+            ]
+        ]
+    },
+    {
+        "id": "255579a77803ae0c",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "name": "link out 31",
+        "mode": "link",
+        "links": [
+            "d531afd6f6fd89c0"
+        ],
+        "x": 2072.5,
+        "y": 1420,
+        "wires": []
+    },
+    {
+        "id": "5f93b2cef0087d88",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "g": "cb367543108969e3",
+        "name": "link out 32",
+        "mode": "link",
+        "links": [
+            "4a17cfc9f2aa07f4"
+        ],
+        "x": 1367.5,
+        "y": 1460,
+        "wires": []
+    },
+    {
+        "id": "973fbc63cbf90a7f",
+        "type": "link in",
+        "z": "d1267c559558b24d",
+        "g": "d2569de64cd0d357",
+        "name": "link in 31",
+        "links": [
+            "ac24075f73e6b79a"
+        ],
+        "x": 397.5,
+        "y": 2200,
+        "wires": [
+            [
+                "5298789686e294f7"
+            ]
+        ]
+    },
+    {
+        "id": "ac24075f73e6b79a",
+        "type": "link out",
+        "z": "d1267c559558b24d",
+        "g": "0f196625c1c13daa",
+        "name": "link out 33",
+        "mode": "link",
+        "links": [
+            "973fbc63cbf90a7f"
+        ],
+        "x": 1847.5,
+        "y": 2020,
+        "wires": []
+    }
+]
