@@ -1,0 +1,50 @@
+version: "3.7"
+services:
+  coredns:
+    image: coredns/coredns
+    container_name: dns-root-server
+    hostname: dns-root-server
+    command: -conf /Corefile
+    volumes:
+      - ./config/Corefile:/Corefile
+    networks:
+      train:
+        ipv4_address: 172.30.0.2
+
+  keycloak:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:latest
+    depends_on:
+      - coredns
+    ports:
+      - 8000:8080
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=devpassword
+    volumes:
+      - ./keycloak/realms/:/opt/keycloak/data/import
+    command: ["start-dev", "--import-realm", "--hostname-url=http://keycloak:8080/"]
+    networks:
+      train:
+        ipv4_address: 172.30.0.3
+
+  ipfs:
+    container_name: ipfs
+    image: 'ipfs/kubo:v0.23.0'
+    ports:
+      - "4001:4001"
+      - "5001:5001"
+    user: "ipfs"
+    command: [ "daemon", "--enable-pubsub-experiment" ]
+    networks:
+      train:
+        ipv4_address: 172.30.0.4
+
+
+networks:
+  train:
+    external: false
+    name: train
+    ipam:
+      config:
+        - subnet: 172.30.0.1/16

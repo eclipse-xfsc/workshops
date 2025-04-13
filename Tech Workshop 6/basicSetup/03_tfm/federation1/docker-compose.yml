@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  fed1-tfm:
+    container_name: fed1-tfm
+    image: node-654e3bca7fbeeed18f81d7c7.ps-xaas.io/train/tspa-service:latest
+    environment:
+       SPRING_SECURITY_OAUTH2_RESOURCESERVER_JWT_ISSUER_URI: http://keycloak:8080/realms/gxfs-dev-test
+       TSPA_IPFS_RCP_API: /ip4/172.30.0.4/tcp/5001
+       NAMESERVER_ADDRESS: http://fed1-dns:16001
+       NAMESERVER_TOKEN_SERVER_URL: http://keycloak:8080/realms/gxfs-dev-test/protocol/openid-connect/token
+       NAMESERVER_GRANT_TYPE: client_credentials
+       NAMESERVER_CLIENT_ID: xfsctest
+       NAMESERVER_CLIENT_SECRET: 6GRWUQXZ3p6U0gzVIp0mInAdf1zWuQEJ
+       REQUEST_GET_MAPPING: http://fed1-tfm:8080/tspa-service/tspa/v1/
+       STORAGE_TYPE_TRUSTLIST: IPFS
+    ports:
+      - "16003:8080"
+    networks:
+      - train
+
+networks:
+  train:
+    external: false
+    name: train
+    ipam:
+      config:
+        - subnet: 172.30.0.1/16

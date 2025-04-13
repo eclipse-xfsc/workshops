@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  fed2-dns:
+    image: node-654e3bca7fbeeed18f81d7c7.ps-xaas.io/train/dns-zone-manager-nsd:master
+    container_name: fed2-dns
+    ports:
+      - 16002:16001
+    volumes:
+      - fed2-zonedata:/var/lib/zonemgr
+      - ./config/zonemanager.conf:/usr/lib/zonemgr/config.conf
+    networks:
+      train:
+        ipv4_address: 172.30.2.1
+
+volumes:
+  fed2-zonedata:
+    name: fed2-zonedata
+
+networks:
+  train:
+    external: false
+    name: train
+    ipam:
+      config:
+        - subnet: 172.30.0.1/16

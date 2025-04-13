@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  ttv-server:
+    container_name: ttv-server
+    image: node-654e3bca7fbeeed18f81d7c7.ps-xaas.io/train/trusted-content-resolver-service:latest
+    #image: local/ttv:latest
+    environment:
+       TCR_DID_BASE_URI: http://uni-resolver-web:8080/1.0
+       #TCR_DID_CONFIG_PATH: src/main/resources/uni-resolver-config.json
+       TCR_DID_CACHE_SIZE: 100
+       TCR_DID_CACHE_TIMEOUT: 5M
+       TCR_DNS_HOSTS: 172.30.0.2
+       TCR_DNS_TIMEOUT: 5000
+       TCR_DNS_DNSSEC_ENABLED: false
+       #TCR_DNS_DNSSEC_ROOTPATH:
+       TCR_TL_CACHE_SIZE: 0
+       TCR_TL_CACHE_TIMEOUT: 5M
+    ports:
+      - "8887:8087"
+    networks:
+      - train
+        
+networks:
+  train:
+    external: false
+    name: train
+    ipam:
+      config:
+        - subnet: 172.30.0.1/16
