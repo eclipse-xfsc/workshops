@@ -1,0 +1,4 @@
+gxfs/ws/drinks/DrinkServiceApplication.class
+gxfs/ws/drinks/config/SecurityConfig.class
+gxfs/ws/drinks/config/ClientConfig.class
+gxfs/ws/drinks/controller/DrinkServiceController.class
