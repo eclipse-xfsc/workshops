@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "a73b7b3c-0236-4a78-8333-f02baa330d1e",
+		"name": "GXFS-TDZM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4966847"
+	},
+	"item": [
+		{
+			"name": "GET Zone Data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dns_host}}/view-zone",
+					"host": [
+						"{{dns_host}}"
+					],
+					"path": [
+						"view-zone"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{dns_host}}/status",
+					"host": [
+						"{{dns_host}}"
+					],
+					"path": [
+						"status"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Zone",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"schemes\": [\n        \"alice.federation1.train\"\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{dns_host}}/names/:scheme_name/schemes",
+					"host": [
+						"{{dns_host}}"
+					],
+					"path": [
+						"names",
+						":scheme_name",
+						"schemes"
+					],
+					"variable": [
+						{
+							"key": "scheme_name",
+							"value": "{{federationName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT trust-list did",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"did\": \"did:web:essif.iao.fraunhofer.de\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{dns_host}}/names/:scheme_name/trust-list",
+					"host": [
+						"{{dns_host}}"
+					],
+					"path": [
+						"names",
+						":scheme_name",
+						"trust-list"
+					],
+					"variable": [
+						{
+							"key": "scheme_name",
+							"value": "{{federationName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{dns_api_key}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

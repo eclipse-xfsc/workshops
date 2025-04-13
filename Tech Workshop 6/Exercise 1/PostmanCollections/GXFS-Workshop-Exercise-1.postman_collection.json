@@ -1,0 +1,637 @@
+{
+	"info": {
+		"_postman_id": "c4b7c6fc-ebe7-40a4-a35d-9e030a00190e",
+		"name": "GXFS-Workshop-Exercise-1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4966847"
+	},
+	"item": [
+		{
+			"name": "01. Create Trust Lists - Only do one of those",
+			"item": [
+				{
+					"name": "Creation of XML trust list",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\r\n<TrustServiceStatusList>\r\n  <FrameworkInformation>\r\n    <TSLVersionIdentifier>1</TSLVersionIdentifier>\r\n    <TSLSequenceNumber>1</TSLSequenceNumber>\r\n    <TSLType>http://TRAIN/TrstSvc/TrustedList/TSLType/federation1-POC</TSLType>\r\n    <FrameworkOperatorName>\r\n      <Name>Federation 1</Name>\r\n    </FrameworkOperatorName>\r\n    <FrameworkOperatorAddress>\r\n      <PostalAddresses>\r\n        <PostalAddress>\r\n          <StreetAddress>Hauptstrasse</StreetAddress>\r\n          <Locality>Stuttgart</Locality>\r\n          <PostalCode>70563</PostalCode>\r\n          <CountryName>DE</CountryName>\r\n        </PostalAddress>\r\n      </PostalAddresses>\r\n      <ElectronicAddress>\r\n        <URI>mailto:admin@federation1.train</URI>\r\n      </ElectronicAddress>\r\n    </FrameworkOperatorAddress>\r\n    <FrameworkName>\r\n      <Name>{{federationName}}</Name>\r\n    </FrameworkName>\r\n    <FrameworkInformationURI>\r\n      <URI>https://TRAIN/interoperability/federation-Directory</URI>\r\n    </FrameworkInformationURI>\r\n\t  <FrameworkAuditURI>\r\n      <URI>https://TRAIN/interoperability/Audit</URI>\r\n    </FrameworkAuditURI>\r\n    <FrameworkTypeCommunityRules>\r\n      <URI>https://TrustFramework_TRAIN.example.com/en/federation1-dir-rules.html</URI>\r\n    </FrameworkTypeCommunityRules>\r\n    <FrameworkScope>EU</FrameworkScope>\r\n    <PolicyOrLegalNotice>\r\n      <TSLLegalNotice>The applicable legal framework for the present trusted list is TBD. Valid legal notice text will be created.</TSLLegalNotice>\r\n    </PolicyOrLegalNotice>\r\n    <ListIssueDateTime>2023-12-15T00:00:00Z</ListIssueDateTime>\r\n  </FrameworkInformation>\r\n</TrustServiceStatusList>",
+							"options": {
+								"raw": {
+									"language": "xml"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/init/xml/{{federationName}}/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"init",
+								"xml",
+								"{{federationName}}",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creation of the JSON trust list",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"TrustServiceStatusList\": {\r\n    \"FrameworkInformation\": {\r\n      \"TSLVersionIdentifier\": \"1\",\r\n      \"TSLSequenceNumber\": \"1\",\r\n      \"TSLType\": \"http://TRAIN/TrstSvc/TrustedList/TSLType/federation1-POC\",\r\n      \"FrameworkOperatorName\": {\r\n        \"Name\": \"Federation 1\"\r\n      },\r\n      \"FrameworkOperatorAddress\": {\r\n        \"PostalAddresses\": {\r\n          \"PostalAddress\": [\r\n            {\r\n              \"StreetAddress\": \"Hauptstrasse\",\r\n              \"Locality\": \"Stuttgart\",\r\n              \"PostalCode\": \"70563\",\r\n              \"CountryName\": \"DE\"\r\n            }\r\n          ]\r\n        },\r\n        \"ElectronicAddress\": {\r\n          \"URI\": \"mailto:admin@federation1.train\"\r\n        }\r\n      },\r\n      \"FrameworkName\": {\r\n        \"Name\": \"{{federationName}}\"\r\n      },\r\n      \"FrameworkInformationURI\": {\r\n        \"URI\": \"https://TRAIN/interoperability/federation-Directory\"\r\n      },\r\n      \"FrameworkAuditURI\": {\r\n        \"URI\": \"https://TRAIN/interoperability/Audit\"\r\n      },\r\n      \"FrameworkTypeCommunityRules\": {\r\n        \"URI\": \"https://TrustFramework_TRAIN.example.com/en/federation1-dir-rules.html\"\r\n      },\r\n      \"FrameworkScope\": \"EU\",\r\n      \"PolicyOrLegalNotice\": {\r\n        \"TSLLegalNotice\": \"The applicable legal framework for the present trusted list is TBD. Valid legal notice text will be created.\"\r\n      },\r\n      \"ListIssueDateTime\": \"2023-12-15T00:00:00Z\"\r\n    }\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/init/json/{{federationName}}/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"init",
+								"json",
+								"{{federationName}}",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "02. Publish TSP - Do both requests",
+			"item": [
+				{
+					"name": "01. TSP publishing Single",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"TrustServiceProvider\":{\r\n      \"UUID\": 1,\r\n\t  \"TSPName\": \"CompanyaA Gmbh\",\r\n\t  \"TSPTradeName\": \"CompanyaA Gmbh\",\r\n\t  \"TSPInformation\": {\r\n\t\t\"Address\": {\r\n\t\t  \"ElectronicAddress\": \"info@companya.de\",\r\n\t\t  \"PostalAddress\": {\r\n\t\t\t\"City\": \"Stuttgart\",\r\n\t\t\t\"Country\": \"DE\",\r\n\t\t\t\"PostalCode\": \"11111\",\r\n\t\t\t\"State\": \"BW\",\r\n\t\t\t\"StreetAddress1\": \"Hauptstr\",\r\n\t\t\t\"StreetAddress2\": \"071\"\r\n\t\t  }\r\n\t\t},\r\n\t\t\"TSPCertificationList\":{\r\n\t\t\"TSPCertification\": [\r\n\t\t  {\r\n\t\t\t\"Type\": \"ISO:9001\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"EU-VAT\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  }\r\n\t\t]\r\n\t\t},\r\n\t\t\"TSPEntityIdentifierList\": {\r\n\t\t  \"TSPEntityIdendifier\":[ {\r\n\t\t\t\"Type\": \"vLEI\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"VAT\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  }\r\n\t\t  ]\r\n\t\t},\r\n\t\t\"TSPInformationURI\": \"string\"\r\n\t  },\r\n\t  \"TSPServices\": {\r\n\t\t\"TSPService\": [{\r\n\t\t  \"ServiceName\": \"Federation Notary\",\r\n\t\t  \"ServiceTypeIdentifier\": \"string\",\r\n\t\t  \"ServiceCurrentStatus\": \"string\",\r\n\t\t  \"StatusStartingTime\": \"string\",\r\n\t\t  \"ServiceDefinitionURI\": \"string\",\r\n\t\t  \"ServiceDigitalIdentity\": {\r\n\t\t\t\"DigitalId\":{\r\n\t\t\t  \"X509Certificate\": \"sgdhfgsfhdsgfhsgfs\",\r\n\t\t\t  \"DID\": \"did:web:essif.iao.fraunhofer.de\"\r\n\t\t\t}\r\n\t\t  },\r\n\t\t  \"AdditionalServiceInformation\": {\r\n\t\t\t\"ServiceBusinessRulesURI\": \"string\",\r\n\t\t\t\"ServiceGovernanceURI\": \"string\",\r\n\t\t\t\"ServiceIssuedCredentialTypes\":{\r\n\t\t\t\t\"CredentialType\": [\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  }\r\n\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"ServiceContractType\": \"string\",\r\n\t\t\t\"ServicePolicySet\": \"string\",\r\n\t\t\t\"ServiceSchemaURI\": \"string\",\r\n\t\t\t\"ServiceSupplyPoint\": \"string\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]}\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list/tsp",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list",
+								"tsp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "02. TSP publish multiple at once",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"TrustServiceProvider\":[{\r\n      \"UUID\": 2,\r\n\t  \"TSPName\": \"CompanyaA Gmbh\",\r\n\t  \"TSPTradeName\": \"CompanyaA Gmbh\",\r\n\t  \"TSPInformation\": {\r\n\t\t\"Address\": {\r\n\t\t  \"ElectronicAddress\": \"info@companya.de\",\r\n\t\t  \"PostalAddress\": {\r\n\t\t\t\"City\": \"Stuttgart\",\r\n\t\t\t\"Country\": \"DE\",\r\n\t\t\t\"PostalCode\": \"11111\",\r\n\t\t\t\"State\": \"BW\",\r\n\t\t\t\"StreetAddress1\": \"Hauptstr\",\r\n\t\t\t\"StreetAddress2\": \"071\"\r\n\t\t  }\r\n\t\t},\r\n\t\t\"TSPCertificationList\":{\r\n\t\t\"TSPCertification\": [\r\n\t\t  {\r\n\t\t\t\"Type\": \"ISO:9001\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"EU-VAT\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  }\r\n\t\t]\r\n\t\t},\r\n\t\t\"TSPEntityIdentifierList\": {\r\n\t\t  \"TSPEntityIdendifier\":[ {\r\n\t\t\t\"Type\": \"vLEI\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"VAT\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  }\r\n\t\t  ]\r\n\t\t},\r\n\t\t\"TSPInformationURI\": \"string\"\r\n\t  },\r\n\t  \"TSPServices\": {\r\n\t\t\"TSPService\": [{\r\n\t\t  \"ServiceName\": \"Federation Notary\",\r\n\t\t  \"ServiceTypeIdentifier\": \"string\",\r\n\t\t  \"ServiceCurrentStatus\": \"string\",\r\n\t\t  \"StatusStartingTime\": \"string\",\r\n\t\t  \"ServiceDefinitionURI\": \"string\",\r\n\t\t  \"ServiceDigitalIdentity\": {\r\n\t\t\t\"DigitalId\":{\r\n\t\t\t  \"X509Certificate\": \"sgdhfgsfhdsgfhsgfs\",\r\n\t\t\t  \"DID\": \"did:web:essif.iao.fraunhofer.de\"\r\n\t\t\t}\r\n\t\t  },\r\n\t\t  \"AdditionalServiceInformation\": {\r\n\t\t\t\"ServiceBusinessRulesURI\": \"string\",\r\n\t\t\t\"ServiceGovernanceURI\": \"string\",\r\n\t\t\t\"ServiceIssuedCredentialTypes\":{\r\n\t\t\t\t\"CredentialType\": [\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  }\r\n\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"ServiceContractType\": \"string\",\r\n\t\t\t\"ServicePolicySet\": \"string\",\r\n\t\t\t\"ServiceSchemaURI\": \"string\",\r\n\t\t\t\"ServiceSupplyPoint\": \"string\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]}\r\n\t},{\r\n      \"UUID\": 3,\r\n\t  \"TSPName\": \"CompanyaA Gmbh\",\r\n\t  \"TSPTradeName\": \"CompanyaA Gmbh\",\r\n\t  \"TSPInformation\": {\r\n\t\t\"Address\": {\r\n\t\t  \"ElectronicAddress\": \"info@companya.de\",\r\n\t\t  \"PostalAddress\": {\r\n\t\t\t\"City\": \"Stuttgart\",\r\n\t\t\t\"Country\": \"DE\",\r\n\t\t\t\"PostalCode\": \"11111\",\r\n\t\t\t\"State\": \"BW\",\r\n\t\t\t\"StreetAddress1\": \"Hauptstr\",\r\n\t\t\t\"StreetAddress2\": \"071\"\r\n\t\t  }\r\n\t\t},\r\n\t\t\"TSPCertificationList\":{\r\n\t\t\"TSPCertification\": [\r\n\t\t  {\r\n\t\t\t\"Type\": \"ISO:9001\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"EU-VAT\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  }\r\n\t\t]\r\n\t\t},\r\n\t\t\"TSPEntityIdentifierList\": {\r\n\t\t  \"TSPEntityIdendifier\":[ {\r\n\t\t\t\"Type\": \"vLEI\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"VAT\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  }\r\n\t\t  ]\r\n\t\t},\r\n\t\t\"TSPInformationURI\": \"string\"\r\n\t  },\r\n\t  \"TSPServices\": {\r\n\t\t\"TSPService\": [{\r\n\t\t  \"ServiceName\": \"Federation Notary\",\r\n\t\t  \"ServiceTypeIdentifier\": \"string\",\r\n\t\t  \"ServiceCurrentStatus\": \"string\",\r\n\t\t  \"StatusStartingTime\": \"string\",\r\n\t\t  \"ServiceDefinitionURI\": \"string\",\r\n\t\t  \"ServiceDigitalIdentity\": {\r\n\t\t\t\"DigitalId\":{\r\n\t\t\t  \"X509Certificate\": \"sgdhfgsfhdsgfhsgfs\",\r\n\t\t\t  \"DID\": \"did:web:essif.iao.fraunhofer.de\"\r\n\t\t\t}\r\n\t\t  },\r\n\t\t  \"AdditionalServiceInformation\": {\r\n\t\t\t\"ServiceBusinessRulesURI\": \"string\",\r\n\t\t\t\"ServiceGovernanceURI\": \"string\",\r\n\t\t\t\"ServiceIssuedCredentialTypes\":{\r\n\t\t\t\t\"CredentialType\": [\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  }\r\n\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"ServiceContractType\": \"string\",\r\n\t\t\t\"ServicePolicySet\": \"string\",\r\n\t\t\t\"ServiceSchemaURI\": \"string\",\r\n\t\t\t\"ServiceSupplyPoint\": \"string\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]}\r\n\t}]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list/tsp",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list",
+								"tsp"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "03. View Published TSP",
+			"item": [
+				{
+					"name": "GET VC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/vc/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"vc",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Trustlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "04. Update TSP",
+			"item": [
+				{
+					"name": "TSP update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"TrustServiceProvider\":{\r\n      \"UUID\": 1,\r\n\t  \"TSPName\": \"XYZ Gmbh\",\r\n\t  \"TSPTradeName\": \"XYZ Gmbh\",\r\n\t  \"TSPInformation\": {\r\n\t\t\"Address\": {\r\n\t\t  \"ElectronicAddress\": \"info@companya.de\",\r\n\t\t  \"PostalAddress\": {\r\n\t\t\t\"City\": \"Siegen\",\r\n\t\t\t\"Country\": \"DE\",\r\n\t\t\t\"PostalCode\": \"22222\",\r\n\t\t\t\"State\": \"NRW\",\r\n\t\t\t\"StreetAddress1\": \"Hauptsr\",\r\n\t\t\t\"StreetAddress2\": \"054\"\r\n\t\t  }\r\n\t\t},\r\n\t\t\"TSPCertificationList\":{\r\n\t\t\"TSPCertification\": [\r\n\t\t  {\r\n\t\t\t\"Type\": \"ISO:9002\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"EU-VAT\",\r\n\t\t\t\"Value\": \"4356546745\"\r\n\t\t  }\r\n\t\t]\r\n\t\t},\r\n\t\t\"TSPEntityIdentifierList\": {\r\n\t\t  \"TSPEntityIdendifier\":[ {\r\n\t\t\t\"Type\": \"vLEI\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  },\r\n\t\t  {\r\n\t\t\t\"Type\": \"VAT\",\r\n\t\t\t\"Value\": \"3453654764\"\r\n\t\t  }\r\n\t\t  ]\r\n\t\t},\r\n\t\t\"TSPInformationURI\": \"string\"\r\n\t  },\r\n\t  \"TSPServices\": {\r\n\t\t\"TSPService\": [{\r\n\t\t  \"ServiceName\": \"Federation Notary\",\r\n\t\t  \"ServiceTypeIdentifier\": \"string\",\r\n\t\t  \"ServiceCurrentStatus\": \"string\",\r\n\t\t  \"StatusStartingTime\": \"string\",\r\n\t\t  \"ServiceDefinitionURI\": \"string\",\r\n\t\t  \"ServiceDigitalIdentity\": {\r\n\t\t\t\"DigitalId\":{\r\n\t\t\t  \"X509Certificate\": \"sgdhfgsfhdsgfhsgfs\",\r\n\t\t\t  \"DID\": \"did:web:essif.iao.fraunhofer.de\"\r\n\t\t\t}\r\n\t\t  },\r\n\t\t  \"AdditionalServiceInformation\": {\r\n\t\t\t\"ServiceBusinessRulesURI\": \"string\",\r\n\t\t\t\"ServiceGovernanceURI\": \"string\",\r\n\t\t\t\"ServiceIssuedCredentialTypes\":{\r\n\t\t\t\t\"CredentialType\": [\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  },\r\n\t\t\t  {\r\n\t\t\t\t\"Type\": \"string\"\r\n\t\t\t  }\r\n\t\t\t]\r\n\t\t\t},\r\n\t\t\t\"ServiceContractType\": \"string\",\r\n\t\t\t\"ServicePolicySet\": \"string\",\r\n\t\t\t\"ServiceSchemaURI\": \"string\",\r\n\t\t\t\"ServiceSupplyPoint\": \"string\"\r\n\t\t  }\r\n\t\t}\r\n\t  ]}\r\n\t}\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list/tsp/1",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list",
+								"tsp",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "05. View updated TSP",
+			"item": [
+				{
+					"name": "Get Trustlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "06. Delete one of the TSPs",
+			"item": [
+				{
+					"name": "TSP Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list/tsp/2",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list",
+								"tsp",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "07. view updated TSPs",
+			"item": [
+				{
+					"name": "Get Trustlist",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "08. Publish to DNS",
+			"item": [
+				{
+					"name": "08.1 - Trust schemes publisher",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"schemes\": [\"{{federationName}}\"]\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/trustframework/{{federationName}}",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"trustframework",
+								"{{federationName}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "08.2 - DID URI publication",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"did\":\"did:web:essif.iao.fraunhofer.de\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/did",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"did"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "09. Use TTV",
+			"item": [
+				{
+					"name": "resolve workshop-test.federation1.train",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"issuer\": \"CompanyaA Gmbh\",\n  \"trustSchemePointers\": [\n    \"workshop-test.federation1.train\"\n  ],\n  \"endpointTypes\": [\n    \"\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ttv_host}}/tcr/v1/resolve",
+							"protocol": "http",
+							"host": [
+								"{{ttv_host}}"
+							],
+							"path": [
+								"tcr",
+								"v1",
+								"resolve"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validate workshop-test.federation1.train",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"issuer\": \"CompanyaA Gmbh\",\n  \"did\": \"did:web:essif.iao.fraunhofer.de\",\n  \"endpoints\": [\n    \"http://fed1-tfm:16003/tspa-service/tspa/v1/workshop-test.federation1.train/vc/trust-list\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ttv_host}}/tcr/v1/validate",
+							"protocol": "http",
+							"host": [
+								"{{ttv_host}}"
+							],
+							"path": [
+								"tcr",
+								"v1",
+								"validate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Misc - Dont run for exercise.",
+			"item": [
+				{
+					"name": "TFM HealthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/actuator/health",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Trust-List",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/tspa/v1/{{federationName}}/trust-list",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								"tspa",
+								"v1",
+								"{{federationName}}",
+								"trust-list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Well-KnownVC",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{tfm_host}}/tspa-service/.well-known/did-configuration.json",
+							"protocol": "http",
+							"host": [
+								"{{tfm_host}}"
+							],
+							"path": [
+								"tspa-service",
+								".well-known",
+								"did-configuration.json"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TTV HealthCheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{ttv_host}}/actuator/health",
+							"protocol": "http",
+							"host": [
+								"{{ttv_host}}"
+							],
+							"path": [
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": [
+			{
+				"key": "tokenName",
+				"value": "{{token_name}}",
+				"type": "string"
+			},
+			{
+				"key": "clientSecret",
+				"value": "{{client_secret}}",
+				"type": "string"
+			},
+			{
+				"key": "clientId",
+				"value": "{{client_id}}",
+				"type": "string"
+			},
+			{
+				"key": "accessTokenUrl",
+				"value": "{{token_url}}",
+				"type": "string"
+			},
+			{
+				"key": "addTokenTo",
+				"value": "header",
+				"type": "string"
+			},
+			{
+				"key": "grant_type",
+				"value": "client_credentials",
+				"type": "string"
+			},
+			{
+				"key": "refreshRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "tokenRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "authRequestParams",
+				"value": [],
+				"type": "any"
+			},
+			{
+				"key": "challengeAlgorithm",
+				"value": "S256",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "test",
+				"type": "string"
+			},
+			{
+				"key": "scope",
+				"value": "openid",
+				"type": "string"
+			},
+			{
+				"key": "password",
+				"value": "test",
+				"type": "string"
+			},
+			{
+				"key": "authUrl",
+				"value": "https://essif.iao.fraunhofer.de/auth/realms/gxfs-dev-test-2",
+				"type": "string"
+			},
+			{
+				"key": "client_authentication",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

@@ -1,0 +1,4 @@
+curlify2
+requests
+cloudevents
+nats-python

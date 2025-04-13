@@ -1,0 +1,16 @@
+
+Get Credential Schemas:
+	curl -X GET -H "User-Agent: python-requests/2.32.3" -H "Accept-Encoding: gzip, deflate" -H "Accept: */*" -H "Connection: keep-alive" -d 'None' https://cloud-wallet.xfsc.dev/.well-known/openid-credential-issuer
+
+Issue Credential by sending Nats Request using Nats cli:
+	nats req issuer.dummycontentsigner.request '{"type": "issuer.request", "source": "demo", "contenttype": "application/json", "data": {"tenant_id": "tenant_space", "request_id": "9716279f-dd80-4d82-93b0-16f6a87d371f", "payload": {"name": "Leonardo", "last_name": "Da Vinci"}, "identifier": DeveloperCredential}}'
+    
+
+Create Offer:
+	curl -X PUT -H "User-Agent: python-requests/2.32.3" -H "Accept-Encoding: gzip, deflate" -H "Accept: */*" -H "Connection: keep-alive" -H "Content-Length: 447" -d '{"credential_offer": "openid-credential-offer://?credential_offer=%7B%22credential_issuer%22%3A%22https%3A%2F%2Fcloud-wallet.xfsc.dev%22%2C%22credentials%22%3A%5B%22DeveloperCredential%22%5D%2C%22grants%22%3A%7B%22authorization_code%22%3A%7B%22issuer_state%22%3A%22%22%7D%2C%22urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Apre-authorized_code%22%3A%7B%22pre-authorized_code%22%3A%22VpKXRRzgTi23cCC9UUf2%22%2C%22user_pin_required%22%3Afalse%7D%7D%7D"}' https://cloud-wallet.xfsc.dev/api/offering/retrieve/4c216ab0-a91a-413f-8e97-a32eee7a4ef4
+
+List Offers:
+	curl -X GET -H "User-Agent: python-requests/2.32.3" -H "Accept-Encoding: gzip, deflate" -H "Accept: */*" -H "Connection: keep-alive" -d 'None' https://cloud-wallet.xfsc.dev/api/offering/list/4c216ab0-a91a-413f-8e97-a32eee7a4ef4
+
+Accept Offer:
+	curl -X DELETE -H "User-Agent: python-requests/2.32.3" -H "Accept-Encoding: gzip, deflate" -H "Accept: */*" -H "Connection: keep-alive" -H "Content-Length: 159" -d '{"accept": true, "holderKey": "23dedadb-ac64-45b0-870c-460778098c3a", "holderNamespace": "accountSpace", "holderGroup": "4c216ab0-a91a-413f-8e97-a32eee7a4ef4"}' https://cloud-wallet.xfsc.dev/api/offering/clear/4c216ab0-a91a-413f-8e97-a32eee7a4ef4/46195de9-0f6b-4ae7-ae3d-ab614a06e3b0
