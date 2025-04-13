@@ -1,0 +1,68 @@
+{
+	"@id": "http://example.edu/verifiablePresentation/self-description1",
+	"proof": {
+		"created": "2023-05-17T13:48:26Z",
+		"jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJQUzI1NiJ9..YSzki8QQF9U7hKEF1AfYKdSbsSDNf-2iwZWbzHzYrjGYXmIDWyRESWo3QP3iIBM-SkZhtbC0kn_Sb5caCiWFr3Y-MrwPIWXS9n2-VJIrvUzh0JTAWl0oJcx9XhajGgRDNXWPZinV2NN5zkA3t9rRZRw61q1lBpOCfDljWlpoF0LmGI95iuF8u9ntTNt-en1xaMOAybhhASmYWgzprMXePwFaXCgVz9miooh85rbzbVLxO-OI5Td647MEJ3bttF3yTxY3sXCa717YVdQdH6sMz0Im5fKCtEeKXnc9LUKvzLUhkqFeGWNoxuXaDUdehsJGJzG2SB5AsycjfWwu2mNII8c6qY5UtILmq-EAfntyBd1w6gxyQWRH8CQbSlbE2YdC0GERbBW8fOkX7s_3X3cXae3tcNazwYRPftBGYS0kRIFttqjph14OqMf5jx06qROD1_mMG-gjEwfnuPHcXZ1QL79x4mBAkzvAyeL9c_8jUya63QhIHUxFI1u-8m2JJpkBPyIi-37NprGfzLh7CCarGRMiMFxWPY7k5wa5pQWfTVBhPBuvDLKhJWG4_JLPsLtLXexsL4HFXtHq4c3Z_GP-Nq0rKmT4qXSHSG6oqe_ytIsGZLw-rrtTuD4jWoW-C0RNw-MC6QgYgyfFxpae6OSK6IDi554gmBGfVMV3cWkQdoI",
+		"proofPurpose": "assertionMethod",
+		"type": "JsonWebSignature2020",
+		"verificationMethod": "did:web:compliance.lab.gaia-x.eu"
+	},
+	"type": [
+		"VerifiablePresentation"
+	],
+	"@context": [
+		"https://www.w3.org/2018/credentials/v1"
+	],
+	"verifiableCredential": {
+		"issuanceDate": "2022-10-19T18:48:09Z",
+		"credentialSubject": {
+			"gx-community:abv": "15.0",
+			"@type": "gx-community:DrinkOffering",
+			"gax-trust-framework:name": {
+				"@value": "Whisky Sour",
+				"@type": "xsd:string"
+			},
+			"@id": "did:web:whiskysour",
+			"@context": {
+				"cc": "http://creativecommons.org/ns#",
+				"schema": "http://schema.org/",
+				"cred": "https://www.w3.org/2018/credentials#",
+				"void": "http://rdfs.org/ns/void#",
+				"owl": "http://www.w3.org/2002/07/owl#",
+				"xsd": "http://www.w3.org/2001/XMLSchema#",
+				"gax-validation": "http://w3id.org/gaia-x/validation#",
+				"skos": "http://www.w3.org/2004/02/skos/core#",
+				"voaf": "http://purl.org/vocommons/voaf#",
+				"rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+				"vcard": "http://www.w3.org/2006/vcard/ns#",
+				"gax-core": "https://w3id.org/gaia-x/core#",
+				"dct": "http://purl.org/dc/terms/",
+				"sh": "http://www.w3.org/ns/shacl#",
+				"gax-trust-framework": "http://w3id.org/gaia-x/gax-trust-framework#",
+				"rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+				"gx-community": "https://gxfs.eu/ns#",
+				"ids": "https://w3id.org/idsa/core/",
+				"dcat": "http://www.w3.org/ns/dcat#",
+				"vann": "http://purl.org/vocab/vann/",
+				"foaf": "http://xmlns.com/foaf/0.1/",
+				"did": "https://www.w3.org/TR/did-core/#"
+			},
+			"gx-community:volume": 100
+		},
+		"@type": [
+			"VerifiableCredential"
+		],
+		"@id": "https://www.example.org/SoftwareOffering.json",
+		"proof": {
+			"created": "2023-05-17T13:48:25Z",
+			"jws": "eyJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdLCJhbGciOiJQUzI1NiJ9..lsxdiiM-Tb335nlUapGfw-O1DBHwDQ4uoAVORQg6_7nlmmmdWYvKho3P4Kc6JJFYLmjgzq3hBS9hSZ-1q1jmovgUqkCA7Nj8go6Kh6fECAB_VB77FZC82hQD8gTlQpdm4W4pDlRjnx7GM0VmyeNJbMwT_ie0u4GdK9L47pXClibBVcdAN2nXxaFbPaCD-RAGZcNsap6GZgES160n-vlesGegL-nQ6_cjidEkOVj9WYUfyWsvilFS6fGS313uz8O7C6C9bybO6xpw37ojVb_rs_0noMC9I7AQdIcmiWKJbmixLfFkOlQcUtzEyyTUqchvXHi7PV_ptvhwus8Wc6EFNXFpJ7LTxkTMyH9x0NrAe2xjO8ZguAghda8ooeXGCKQjQKOsNDFviR4AwKaU16nsz6Yj5UcnjgjX0KUkmx5k3ndmQn8OlxVS5o0F2zuhhLsrP1uY1GQd0PZF9mgV1Dd3Bh3XTa8R5YedPP_s9GpI41SpXX03tifxdxyOTxKCOH5oilOo0SETHrWZCo2-hJXWAIXhRja6VFDKcUtdZywdM7I14oovHpE_zqZilZl-nqIb9GOLrruSyhiiyeNikhhJyr13sxkJhm0OcAy94-GcSR0WMEOUa53l42IFM4llLlOIfi7C3SxE9reK8ht9WRG97y7LkHY6XyXM-tpQTRQ0jZ0",
+			"proofPurpose": "assertionMethod",
+			"type": "JsonWebSignature2020",
+			"verificationMethod": "did:web:compliance.lab.gaia-x.eu"
+		},
+		"@context": [
+			"https://www.w3.org/2018/credentials/v1"
+		],
+		"issuer": "https://gaiax.de"
+	}
+}

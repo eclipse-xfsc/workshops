@@ -1,0 +1,52 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix gax-validation:  <http://w3id.org/gaia-x/validation#> .
+
+@prefix gax-trust-framework: <http://w3id.org/gaia-x/gax-trust-framework#> .
+@prefix vcard: <https://www.w3.org/2006/vcard/ns#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix did: <https://www.w3.org/TR/did-core/#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix gax-core: <https://w3id.org/gaia-x/core#> .
+@prefix cc: <http://creativecommons.org/ns#> .
+@prefix ids: <https://w3id.org/idsa/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix voaf: <http://purl.org/vocommons/voaf#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix schema: <http://schema.org/> .
+@prefix cred: <https://www.w3.org/2018/credentials#> .
+@prefix gx-community: <https://gxfs.eu/ns#> .
+
+
+gax-validation:DrinkOfferingShape
+	a sh:NodeShape ;
+	sh:targetClass gx-community:DrinkOffering ;
+	sh:property [ sh:path gax-trust-framework:name ;
+				  sh:name "name" ;
+				  sh:description "Name of the drink"@en ;
+				  skos:example "'Beer'" ;
+				  sh:order 1 ;
+				  sh:minCount 1 ;
+				  sh:datatype xsd:string ] ;
+	sh:property [ sh:path gx-community:abv ;
+				  sh:name "abv" ;
+				  sh:description "Alcohol by volume in percentage"@en ;
+				  skos:example "'5.4'" ;
+				  sh:order 2 ;
+				  sh:minCount 1 ;
+				  sh:maxCount 1 ;
+                  sh:datetype xsd:float ; ] ;
+	sh:property [ sh:path gx-community:volume ;
+				  sh:name "volume" ;
+				  sh:description "Volume in ml"@en ;
+				  skos:example "'330'" ;
+				  sh:order 3 ;
+				  sh:minCount 1 ;
+                  sh:maxCount 2 ;
+				  sh:datatype xsd:integer ] .

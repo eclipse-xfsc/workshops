@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "a47532fe-a4ec-4e59-8ac8-7d43c6cfc26b",
+		"name": "Basic-Workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1_CreateConnection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{connectionManager}}/v1/invitation-url?alias=trust",
+					"host": [
+						"{{connectionManager}}"
+					],
+					"path": [
+						"v1",
+						"invitation-url"
+					],
+					"query": [
+						{
+							"key": "alias",
+							"value": "trust"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2_IssueCredential",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"connectionId\":\"{connectionId}\",\r\n    \"credentialDefinitionId\":\"8y8oycXjnQCRT2t3mRuzbP:3:CL:40614:GXFS-Workshop-Credential\",\r\n    \"comment\":\"Issue it.\",\r\n    \"attributes\": [\r\n        {\r\n           \"name\": \"email\",\r\n           \"value\":\"meineEmail@email\"\r\n        },\r\n        {\r\n            \"name\":\"userName\",\r\n            \"value\":\"workshopatttendee\"\r\n        },\r\n        {\r\n            \"name\":\"birthdate\",\r\n            \"value\":\"01.01.2023\"\r\n        },\r\n        {\r\n            \"name\":\"cardNumber\",\r\n            \"value\":\"123456\"\r\n        },\r\n        {\r\n            \"name\":\"identifier\",\r\n            \"value\":\"urn:id:123456\"\r\n        }\r\n    ],\r\n    \"autoAcceptCredential\":\"never\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{attestationManager}}/v1/create-offer-credential",
+					"host": [
+						"{{attestationManager}}"
+					],
+					"path": [
+						"v1",
+						"create-offer-credential"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.1_IssuePrincipalCredential",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"connectionId\":\"{connectionId}\",\r\n    \"credentialDefinitionId\":\"8y8oycXjnQCRT2t3mRuzbP:3:CL:33627:principalCredential-integration-1.3\",\r\n    \"comment\":\"Issue it.\",\r\n    \"attributes\": [\r\n        {\r\n           \"name\": \"Email\",\r\n           \"value\":\"meineEmail@email\"\r\n        },\r\n        {\r\n            \"name\":\"PreferredUsername\",\r\n            \"value\":\"workshopatttendee\"\r\n        },\r\n        {\r\n            \"name\":\"FirstName\",\r\n            \"value\":\"Test\"\r\n        },\r\n        {\r\n            \"name\":\"MiddleName\",\r\n            \"value\":\"Test\"\r\n        },\r\n        {\r\n            \"name\":\"LastName\",\r\n            \"value\":\"Test\"\r\n        },\r\n        {\r\n            \"name\":\"Gender\",\r\n            \"value\":\"M\"\r\n        },\r\n        {\r\n            \"name\":\"Birthdate\",\r\n            \"value\":\"01.01.2023\"\r\n        },\r\n        {\r\n            \"name\":\"FederationId\",\r\n            \"value\":\"123456\"\r\n        },\r\n        {\r\n            \"name\":\"subjectDID\",\r\n            \"value\":\"urn:id:123456\"\r\n        },\r\n        {\r\n            \"name\":\"Claims\",\r\n            \"value\":\"Test\"\r\n        },\r\n        {\r\n            \"name\":\"issuerDID\",\r\n            \"value\":\"Test\"\r\n        }\r\n    ],\r\n    \"autoAcceptCredential\":\"never\"\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{attestationManager}}/v1/create-offer-credential",
+					"host": [
+						"{{attestationManager}}"
+					],
+					"path": [
+						"v1",
+						"create-offer-credential"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.1_RequestCredentialBySchema",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"comment\":\"Any issuer.\",\r\n   \"connectionId\":\"{connectionId}\",\r\n   \"attributes\":[\r\n       {\r\n           \"attributeName\":\"userName\",\r\n           \"schemaId\":\"8y8oycXjnQCRT2t3mRuzbP:2:GXFS-Workshop-Credential:1.0.0\"\r\n       }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proofManager}}/v1/send-presentation-request",
+					"host": [
+						"{{proofManager}}"
+					],
+					"path": [
+						"v1",
+						"send-presentation-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.2_RequestCredentialByCredDef",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"comment\":\"Just this issuer.\",\r\n   \"connectionId\":\"{connectionId}\",\r\n   \"attributes\":[\r\n       {\r\n           \"attributeName\":\"userName\",\r\n           \"schemaId\":\"8y8oycXjnQCRT2t3mRuzbP:3:CL:40614:GXFS-Workshop-Credential\"\r\n       }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{proofManager}}/v1/send-presentation-request",
+					"host": [
+						"{{proofManager}}"
+					],
+					"path": [
+						"v1",
+						"send-presentation-request"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3_GetPresentationResult",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{proofManager}}/v1/find-by-presentation-id?presentationId=719751fe-a28e-4db4-a49f-f4e5e1eca8c1",
+					"host": [
+						"{{proofManager}}"
+					],
+					"path": [
+						"v1",
+						"find-by-presentation-id"
+					],
+					"query": [
+						{
+							"key": "presentationId",
+							"value": "719751fe-a28e-4db4-a49f-f4e5e1eca8c1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4_PolicyExecution",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\":\"hello\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-policy}}/policy/policies/examplePolicy/1.0/evaluation",
+					"host": [
+						"{{tsa-policy}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"examplePolicy",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.1_PolicyExecutionWithData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"issuer\":\"did:web:123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-policy}}/policy/policies/examplePolicy/1.2/evaluation",
+					"host": [
+						"{{tsa-policy}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"examplePolicy",
+						"1.2",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.2_PolicyExecutionWithHeader",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-DID-LOCATION",
+						"value": "did:web:123",
+						"type": "default"
+					},
+					{
+						"key": "X-DID-TRANSIT-ENGINE",
+						"value": "workshop",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-policy}}/policy/policies/returnDID/1.0/evaluation",
+					"host": [
+						"{{tsa-policy}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"returnDID",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.1_Signing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"credential\": {\r\n    \"@context\": [\r\n      \"https://www.w3.org/2018/credentials/v1\",\r\n      \"https://w3id.org/security/suites/jws-2020/v1\",\r\n      \"https://schema.org\"\r\n    ],\r\n    \"type\": \"VerifiableCredential\",\r\n    \"issuer\": \"did:web:integration.gxfs.dev:api:dynamic:did:workshop\",\r\n    \"issuanceDate\": \"2010-01-01T19:23:24.651387237Z\",\r\n    \"credentialSubject\": {\r\n      \"name\": \"Alice\",\r\n      \"allow\": true\r\n    }\r\n  },\r\n  \"key\": \"key-1\",\r\n  \"namespace\": \"did-management.did-web-integration.gxfs.dev-api-dynamic-did-workshop\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-signer}}/v1/credential/proof",
+					"host": [
+						"{{tsa-signer}}"
+					],
+					"path": [
+						"v1",
+						"credential",
+						"proof"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.1_Verification",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"@context\": [\r\n        \"https://www.w3.org/2018/credentials/v1\",\r\n        \"https://w3id.org/security/suites/jws-2020/v1\",\r\n        \"https://schema.org\"\r\n    ],\r\n    \"credentialSubject\": {\r\n        \"allow\": true,\r\n        \"name\": \"Alice\"\r\n    },\r\n    \"issuanceDate\": \"2010-01-01T19:23:24.651387237Z\",\r\n    \"issuer\": \"did:web:integration.gxfs.dev:api:dynamic:did:workshop\",\r\n    \"proof\": {\r\n        \"created\": \"2023-03-09T15:26:40.889169391Z\",\r\n        \"jws\": \"eyJhbGciOiJKc29uV2ViU2lnbmF0dXJlMjAyMCIsImI2NCI6ZmFsc2UsImNyaXQiOlsiYjY0Il19..MEYCIQDyy7mFhzcQt4iYLgcHG9LoWB4mQQcfUtMhRhUHWdXTFgIhAOs0mbNDeYiuBLLgFEARoYLxqU9zEdpPm4-ulfMAwKYl\",\r\n        \"proofPurpose\": \"assertionMethod\",\r\n        \"type\": \"JsonWebSignature2020\",\r\n        \"verificationMethod\": \"did:web:integration.gxfs.dev:api:dynamic:did:workshop#key-1\"\r\n    },\r\n    \"type\": \"VerifiableCredential\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-signer}}/v1/credential/verify",
+					"host": [
+						"{{tsa-signer}}"
+					],
+					"path": [
+						"v1",
+						"credential",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_PolicyCreation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"group\": \"policies\",\r\n    \"name\": \"test123\",\r\n    \"version\": \"1.0\",\r\n    \"data\": \"{\\\"test\\\":\\\"hello\\\"}\",\r\n    \"dataConfig\": \"\",\r\n    \"rego\": \"package policies.test123\\n default allow = false\\nallow\\n{\\ndata.test == input.message\\n}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-policy-upload}}",
+					"host": [
+						"{{tsa-policy-upload}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6_PolicyDeletion",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{tsa-policy-upload}}/{id}",
+					"host": [
+						"{{tsa-policy-upload}}"
+					],
+					"path": [
+						"{id}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "connectionManager",
+			"value": "localhost:3003",
+			"type": "default"
+		},
+		{
+			"key": "attestationManager",
+			"value": "localhost:3005",
+			"type": "default"
+		},
+		{
+			"key": "proofManager",
+			"value": "localhost:3007",
+			"type": "default"
+		},
+		{
+			"key": "tsa-policy",
+			"value": "localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "tsa-signer",
+			"value": "localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "tsa-policy-upload",
+			"value": "localhost:3000",
+			"type": "default"
+		}
+	]
+}
