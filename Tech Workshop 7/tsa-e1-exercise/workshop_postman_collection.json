@@ -1,0 +1,1129 @@
+{
+	"info": {
+		"_postman_id": "b9be3f2a-243e-4380-9913-29f5f6693a8e",
+		"name": "workshop",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6428008"
+	},
+	"item": [
+		{
+			"name": "policy_healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{policy_addr}}/liveness",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-examplePolicy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-location",
+						"value": "www..yahoo..com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"example\", \"header\": \"boo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/examplePolicy/1.0/evaluation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"examplePolicy",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-didResolve",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"did\": \"did:key:z6Mkfriq1MqLBoPWecGoDLjguo1sB9brj6wT3qZ5BxkKpuP6\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/didResolve/1.0/evaluation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"didResolve",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-validatePolicy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-location",
+						"value": "www..yahoo..com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"foo\": \"barbaz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/examplePolicy/1.4/validation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"examplePolicy",
+						"1.4",
+						"validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-storageSet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"somekey\",\n    \"data\": {\n        \"some\": \"data\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/storageSet/1.0/evaluation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"storageSet",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-storageGet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"somekey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/storageGet/1.0/evaluation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"storageGet",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-storageDelete",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"somekey\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/storageDelete/1.0/evaluation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"storageDelete",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_eval-returnDID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-location",
+						"value": "www..yahoo..com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"example\", \"header\": \"boo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/returnDID/1.0/evaluation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"returnDID",
+						"1.0",
+						"evaluation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_list-policies",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-location",
+						"value": "www..yahoo..com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"message\": \"example\", \"header\": \"boo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/v1/policies?policyName=list",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"v1",
+						"policies"
+					],
+					"query": [
+						{
+							"key": "policyName",
+							"value": "list"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_validate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"foo\": \"barbaz\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/examplePolicy/1.4/validation",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"examplePolicy",
+						"1.4",
+						"validation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_subscribe",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-location",
+						"value": "www..yahoo..com",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"subscriber\": \"sub\",\n    \"webhook_url\":\"https://url-to-call-when-policy-changes.com\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/returnDID/1.0/notifychange",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"returnDID",
+						"1.0",
+						"notifychange"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_export",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/examplePolicy/1.4/export",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"examplePolicy",
+						"1.4",
+						"export"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_import",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "",
+							"type": "file",
+							"src": "/home/yordan/Downloads/policies_example_examplePolicy_1.4.zip"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{policy_addr}}/v1/policy/import",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"v1",
+						"policy",
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "policy_export Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{policy_addr}}/policy/policies/example/examplePolicy/1.4/export",
+					"host": [
+						"{{policy_addr}}"
+					],
+					"path": [
+						"policy",
+						"policies",
+						"example",
+						"examplePolicy",
+						"1.4",
+						"export"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_healthcheck",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"context\": [\n    \"https://w3id.org/security/suites/jws-2020/v1\",\n    \"https://schema.org\"\n  ],\n  \"credentialSubject\": {\n    \"foo\": \"bar\"\n  },\n  \"issuer\": \"did:web:heroic-evenly-stingray.ngrok-free.app:policy:policies:example:returnDID:1.0:evaluation\",\n  \"key\": \"key1\",\n  \"namespace\": \"transit\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/liveness",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_create-VC-from-raw-JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"context\": [\n    \"https://w3id.org/security/suites/jws-2020/v1\",\n    \"https://schema.org\"\n  ],\n  \"credentialSubject\": {\n    \"foo\": \"bar\"\n  },\n  \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n  \"key\": \"key1\",\n  \"namespace\": \"transit\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/v1/credential",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"v1",
+						"credential"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_create-VP-from-raw-JSON",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"context\": [\n    \"https://w3id.org/security/suites/jws-2020/v1\",\n    \"https://schema.org\"\n  ],\n  \"data\": [\n    {\n      \"hello\": \"world\"\n    },\n    {\n      \"hola\": \"mundo\"\n    }\n  ],\n  \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n  \"key\": \"key1\",\n  \"namespace\": \"transit\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/v1/presentation",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"v1",
+						"presentation"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_varify-VC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/2018/credentials/v1\",\n        \"https://w3id.org/security/suites/jws-2020/v1\",\n        \"https://schema.org\"\n    ],\n    \"credentialSubject\": {\n        \"foo\": \"bar\"\n    },\n    \"issuanceDate\": \"2024-06-06T10:23:59.308541525Z\",\n    \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n    \"proof\": {\n        \"created\": \"2024-06-06T10:23:59.318954077Z\",\n        \"jws\": \"eyJhbGciOiIiLCJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdfQ..MEUCIQCch0z3wQxvou8xSIk9K8XcuHEIncmJhUthDId6aW-72QIgARSsKNfuW5nAYsErDi-KtfUbUhrVDmVhiq_T1CRcIT8\",\n        \"proofPurpose\": \"assertionMethod\",\n        \"type\": \"JsonWebSignature2020\",\n        \"verificationMethod\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation#key1\"\n    },\n    \"type\": \"VerifiableCredential\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/v1/credential/verify",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"v1",
+						"credential",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_verify-VP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/2018/credentials/v1\",\n        \"https://w3id.org/security/suites/jws-2020/v1\",\n        \"https://schema.org\"\n    ],\n    \"id\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n    \"proof\": {\n        \"created\": \"2024-06-06T14:05:54.584153228Z\",\n        \"jws\": \"eyJhbGciOiIiLCJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdfQ..MEQCIEtlRaZPkIh_1xr89pbfy1Sd11L1nKtrp08gFxJo5qAOAiAVBPkmyouSHLEbTq1-7aBAVeZb4lgr9y906ZSWc1kNng\",\n        \"proofPurpose\": \"assertionMethod\",\n        \"type\": \"JsonWebSignature2020\",\n        \"verificationMethod\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation#key1\"\n    },\n    \"type\": \"VerifiablePresentation\",\n    \"verifiableCredential\": [\n        {\n            \"@context\": [\n                \"https://www.w3.org/2018/credentials/v1\",\n                \"https://w3id.org/security/suites/jws-2020/v1\",\n                \"https://schema.org\"\n            ],\n            \"credentialSubject\": {\n                \"hello\": \"world\"\n            },\n            \"issuanceDate\": \"2024-06-06T14:05:54.578801732Z\",\n            \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n            \"type\": \"VerifiableCredential\"\n        },\n        {\n            \"@context\": [\n                \"https://www.w3.org/2018/credentials/v1\",\n                \"https://w3id.org/security/suites/jws-2020/v1\",\n                \"https://schema.org\"\n            ],\n            \"credentialSubject\": {\n                \"hola\": \"mundo\"\n            },\n            \"issuanceDate\": \"2024-06-06T14:05:54.578805609Z\",\n            \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n            \"type\": \"VerifiableCredential\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/v1/presentation/verify",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"v1",
+						"presentation",
+						"verify"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_sign-base64-encoded-data",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"key1\",\n    \"namespace\": \"transit\",\n    \"data\": \"SGVsbG8gd29ybGQ=\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/v1/sign",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"v1",
+						"sign"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "signer_JWK-for-key",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"key\": \"key1\",\n    \"namespace\": \"transit\",\n    \"data\": \"SGVsbG8gd29ybGQ=\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{signer_addr}}/v1/jwk//transit/key1",
+					"host": [
+						"{{signer_addr}}"
+					],
+					"path": [
+						"v1",
+						"jwk",
+						"",
+						"transit",
+						"key1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{task_addr}}/liveness",
+					"host": [
+						"{{task_addr}}"
+					],
+					"path": [
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_create-task",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-cache-namespace",
+						"value": "login",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-scope",
+						"value": "user",
+						"type": "text"
+					},
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"did\": \"did:web:did.actor:mike\"  \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{task_addr}}/v1/task/didResolve",
+					"host": [
+						"{{task_addr}}"
+					],
+					"path": [
+						"v1",
+						"task",
+						"didResolve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_task-result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{task_addr}}/v1/taskResult/5021d76f-4ccd-4900-858c-be699c69fb71",
+					"host": [
+						"{{task_addr}}"
+					],
+					"path": [
+						"v1",
+						"taskResult",
+						"5021d76f-4ccd-4900-858c-be699c69fb71"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_create-taskList",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-cache-namespace",
+						"value": "login",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-scope",
+						"value": "user",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\"Consequatur nulla praesentium totam.\"",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{task_addr}}/v1/taskList/testList",
+					"host": [
+						"{{task_addr}}"
+					],
+					"path": [
+						"v1",
+						"taskList",
+						"testList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "task_taskList-result",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{task_addr}}/v1/taskListStatus/8f1d8faf-b03b-497e-83e0-937f59b00342",
+					"host": [
+						"{{task_addr}}"
+					],
+					"path": [
+						"v1",
+						"taskListStatus",
+						"8f1d8faf-b03b-497e-83e0-937f59b00342"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cache_healthcheck",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-cache-key",
+						"value": "did:web:example.com",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-namespace",
+						"value": "Login",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-scope",
+						"value": "administration",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-flatten-strategy",
+						"value": "last",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cache_addr}}/liveness",
+					"host": [
+						"{{cache_addr}}"
+					],
+					"path": [
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cache_set-cache",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-cache-key",
+						"value": "did:web:example.com",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-namespace",
+						"value": "Login",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-scope",
+						"value": "administration",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-ttl",
+						"value": "10",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"admin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cache_addr}}/v1/cache",
+					"host": [
+						"{{cache_addr}}"
+					],
+					"path": [
+						"v1",
+						"cache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cache_get-cache",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-cache-key",
+						"value": "did:web:example.com",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-namespace",
+						"value": "Login",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-scope",
+						"value": "administration",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-flatten-strategy",
+						"value": "last",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cache_addr}}/v1/cache",
+					"host": [
+						"{{cache_addr}}"
+					],
+					"path": [
+						"v1",
+						"cache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cache_external-cache-set",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-cache-key",
+						"value": "did:web:example.com",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-namespace",
+						"value": "Login",
+						"type": "text"
+					},
+					{
+						"key": "x-cache-scope",
+						"value": "Administration",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"foo\": \"bar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cache_addr}}/v1/external/cache",
+					"host": [
+						"{{cache_addr}}"
+					],
+					"path": [
+						"v1",
+						"external",
+						"cache"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infohub_healthcheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{infohub_addr}}/liveness",
+					"host": [
+						"{{infohub_addr}}"
+					],
+					"path": [
+						"liveness"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infohub_export",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{infohub_addr}}/v1/export/testexport",
+					"host": [
+						"{{infohub_addr}}"
+					],
+					"path": [
+						"v1",
+						"export",
+						"testexport"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "infohub_import",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"@context\": [\n        \"https://www.w3.org/2018/credentials/v1\",\n        \"https://w3id.org/security/suites/jws-2020/v1\",\n        \"https://schema.org\"\n    ],\n    \"id\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n    \"proof\": {\n        \"created\": \"2024-06-06T11:47:24.654214155Z\",\n        \"jws\": \"eyJhbGciOiIiLCJiNjQiOmZhbHNlLCJjcml0IjpbImI2NCJdfQ..MEUCIAJuZce5T8ZI36R3yUlGQE54ToqQdsgdSl0YJyXtZvQ-AiEAxdXi4nkXpn2Sr5o9ZN-NkYXlC-eUdEPURpuqPEAuPA4\",\n        \"proofPurpose\": \"assertionMethod\",\n        \"type\": \"JsonWebSignature2020\",\n        \"verificationMethod\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation#key1\"\n    },\n    \"type\": \"VerifiablePresentation\",\n    \"verifiableCredential\": [\n        {\n            \"@context\": [\n                \"https://www.w3.org/2018/credentials/v1\",\n                \"https://w3id.org/security/suites/jws-2020/v1\",\n                \"https://schema.org\"\n            ],\n            \"credentialSubject\": {\n                \"allow\": true\n            },\n            \"issuanceDate\": \"2024-06-06T11:47:24.649831052Z\",\n            \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n            \"type\": \"VerifiableCredential\"\n        },\n        {\n            \"@context\": [\n                \"https://www.w3.org/2018/credentials/v1\",\n                \"https://w3id.org/security/suites/jws-2020/v1\",\n                \"https://schema.org\"\n            ],\n            \"credentialSubject\": {\n                \"allow\": true\n            },\n            \"issuanceDate\": \"2024-06-06T11:47:24.649834282Z\",\n            \"issuer\": \"did:web:vault.vereign.com:tsa:policy:policy:policies:example:returnDID:1.0:evaluation\",\n            \"type\": \"VerifiableCredential\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{infohub_addr}}/v1/import",
+					"host": [
+						"{{infohub_addr}}"
+					],
+					"path": [
+						"v1",
+						"import"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "policy_addr",
+			"value": "https://vault.vereign.com/tsa/policy",
+			"type": "string"
+		},
+		{
+			"key": "signer_addr",
+			"value": "https://vault.vereign.com/tsa/signer",
+			"type": "string"
+		},
+		{
+			"key": "task_addr",
+			"value": "https://vault.vereign.com/tsa/task",
+			"type": "string"
+		},
+		{
+			"key": "cache_addr",
+			"value": "https://vault.vereign.com/tsa/cache",
+			"type": "string"
+		},
+		{
+			"key": "infohub_addr",
+			"value": "https://vault.vereign.com/tsa/infohub",
+			"type": "string"
+		}
+	]
+}
