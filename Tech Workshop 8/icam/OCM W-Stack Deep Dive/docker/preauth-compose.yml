@@ -1,0 +1,17 @@
+services:
+  pre_auth_bridge_service:
+    image: node-654e3bca7fbeeed18f81d7c7.ps-xaas.io/ocm-wstack/pre-authorization-bridge:main
+    ports:
+      - 8083:8083
+    environment:
+      PREAUTHBRIDGE_LISTEN_ADDR: 0.0.0.0
+      PREAUTHBRIDGE_LISTEN_PORT: 8083
+      PREAUTHBRIDGE_NATS_URL: nats://host.docker.internal:4222
+      PREAUTHBRIDGE_OAUTH_CLIENT_SECRET: secret
+      PREAUTHBRIDGE_TWOFACTORTOPIC: two-factor.pin
+      PREAUTHBRIDGE_REDIS_HOSTS: host.docker.internal:6379
+      PREAUTHBRIDGE_REDIS_PASSWORD: redis
+      PREAUTHBRIDGE_LOG_LEVEL: debug
+      PREAUTHBRIDGE_WELLKNOWN_TOKEN_ENDPOINT: http://host.docker.internal:8083/token
+    env_file:
+      - ./shared/client_id.env
