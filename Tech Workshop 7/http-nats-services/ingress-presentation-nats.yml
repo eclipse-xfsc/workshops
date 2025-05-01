@@ -1,0 +1,24 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: demo-presentation-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /request
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: cloud-wallet.xfsc.dev
+    http:
+      paths:
+      - path: /presentation-demo/request
+        pathType: Prefix
+        backend:
+          service:
+            name: demo-nats-services
+            port:
+              number: 8080
+  tls:
+  - hosts:
+      - cloud-wallet.xfsc.dev
+    secretName: xfsc-wildcard
+

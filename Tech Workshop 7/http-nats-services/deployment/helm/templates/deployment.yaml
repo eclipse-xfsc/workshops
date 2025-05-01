@@ -1,0 +1,59 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-nats-services
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: demo-nats-services
+
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+
+  selector:
+    matchLabels:
+      app: demo-nats-services
+  template:
+    metadata:
+      labels:
+        app: demo-nats-services
+
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+
+      containers:
+        - name: {{ .Chart.Name }}-{{ .Values.image.presentation.name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}/{{.Values.image.presentation.name}}:{{ .Values.image.presentation.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.config.presentation.port }}
+              protocol: TCP
+
+          env:
+            - name: NATS_URL
+              value: {{ .Values.config.nats.url }}
+            - name: PORT
+              value: "{{ .Values.config.presentation.port }}"
+
+        - name: {{ .Chart.Name }}-{{ .Values.image.issuing.name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}/{{.Values.image.issuing.name}}:{{ .Values.image.issuing.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: http
+              containerPort: {{ .Values.config.issuing.port }}
+              protocol: TCP
+
+          env:
+              - name: NATS_URL
+                value: {{ .Values.config.nats.url }}
+              - name: PORT
+                value: "{{ .Values.config.issuing.port }}"

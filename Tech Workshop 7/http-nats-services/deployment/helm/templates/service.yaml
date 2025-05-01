@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-nats-services
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: demo-nats-services
+
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: demo-nats-services
+  ports:
+    - port: {{ .Values.config.presentation.port }}
+      targetPort: {{ .Values.config.presentation.port }}
+      protocol: TCP
+      name: demo-nats-services-presentation
+    - port: {{ .Values.config.issuing.port }}
+      targetPort: {{ .Values.config.issuing.port }}
+      protocol: TCP
+      name: demo-nats-services-issuing
